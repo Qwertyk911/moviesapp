@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <b-button>Button</b-button>
+    <b-button variant="danger">Button</b-button>
+    <b-button variant="success">Button</b-button>
+    <b-button variant="outline-primary">Button</b-button>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import { mapActions } from "vuex";
+// поменять местами плот и айди
 export default {
   name: "App",
-  components: {
-    HelloWorld,
+  components: {},
+  mounted() {
+    this.fetchMovies();
+    // fetch("https://www.omdbapi.com/?apikey=a5337d02&i=tt0111161&plot=full")
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log("fetch");
+    //     console.log(data);
+    //   });
+  },
+  methods: {
+    ...mapActions("movies", ["fetchMovies"]),
   },
 };
 </script>
