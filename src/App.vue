@@ -1,3 +1,4 @@
+<script>/* eslint-disable */ </script>
 <template>
   <div id="app">
     <b-button>Button</b-button>

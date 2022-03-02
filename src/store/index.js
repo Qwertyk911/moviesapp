@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Vue from "vue";
 import Vuex from "vuex";
 import movies from "./modules/movies";
