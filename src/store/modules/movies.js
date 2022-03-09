@@ -32,7 +32,7 @@ const moviesStore = {
     }
   },
   actions: {
-    // video №6 time 3.05
+    // video №7 time 00.00
     initMoviesStore: {
       handler ({ dispatch }) {
         dispatch('fetchMovies')
