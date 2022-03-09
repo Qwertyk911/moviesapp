@@ -1,21 +1,25 @@
 <script>/* eslint-disable */ </script>
 <template>
   <div id="app">
-    <b-button>Button</b-button>
+    <MoviesList :list='moviesList'/>
+    <!-- <b-button>Button</b-button>
     <b-button variant="danger">Button</b-button>
     <b-button variant="success">Button</b-button>
-    <b-button variant="outline-primary">Button</b-button>
+    <b-button variant="outline-primary">Button</b-button> -->
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex"
+import MoviesList from "@/components/MoviesList.vue"
 // поменять местами плот и айди
 export default {
   name: "App",
-  components: {},
+  components: {
+    MoviesList
+  },
   mounted() {
-    this.fetchMovies();
+    // this.fetchMovies();
     // fetch("https://www.omdbapi.com/?apikey=a5337d02&i=tt0111161&plot=full")
     //   .then((response) => {
     //     return response.json();
@@ -24,6 +28,9 @@ export default {
     //     console.log("fetch");
     //     console.log(data);
     //   });
+  },
+  computed:{
+    ...mapGetters('movies', ['moviesList'])
   },
   methods: {
     ...mapActions("movies", ["fetchMovies"]),
